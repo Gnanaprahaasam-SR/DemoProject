@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../logistic/logistics/build"
+		},
+		{
+			"path": "../logistic/logistics/public"
+		},
+		{
+			"path": "../logistic/logistics/src"
+		}
+	],
+	"settings": {}
+}
