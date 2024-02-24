@@ -27,6 +27,11 @@ const Home = () => {
         };
     }, []);
 
+
+
+
+
+
     return (
         <div>
             <div className="HomePageHerosection1 px-5">
@@ -44,10 +49,10 @@ const Home = () => {
                 </h1>
 
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 2 }}
-                    transition={{ duration: 0.5 }}
-                    style={{ position: "absolute", top: "3%", left: screenWidth < 500 ? "0%" : "50%", width: screenWidth < 500 ? "100%" : "50%", zIndex: -1, padding: " 0% 5% 0% 5%" }}
+                    initial={{ opacity: 0, translateX: "-50%" }}
+                    animate={{ opacity: 2, translateX: "0%" }}
+                    transition={{ duration: 1.5, }}
+                    style={{ position: "absolute", top: "3%", left: screenWidth < 500 ? "0%" : "50%", width: screenWidth < 500 ? "100%" : "50%", zIndex: -1, padding: " 0% 5% 0% 5%", overflow: "hidden" }}
                 >
                     <motion.video
                         initial={{ opacity: 0 }}
@@ -88,17 +93,35 @@ const Home = () => {
                 <div className="p-5 ">
                     <div className="row">
                         <div className="col-md-6">
+                            <motion.div
+                                initial={{ opacity: 0, scale:0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{
+                                    type:"spring",
+                                    duration: 2,
+                                    bounce: 0.3
+                                }}>
 
-                            <video controls width="100%" className="advertiseVideo" style={{ borderRadius: "9px" }}>
-                                <source src={advertising} type="video/mp4" />
-                            </video>
+                                <video controls width="100%" className="advertiseVideo" style={{ borderRadius: "9px" }}>
+                                    <source src={advertising} type="video/mp4" />
+                                </video>
+                            </motion.div>
                         </div>
-                        <div className="col-md-6 d-flex align-items-center">
-                            <div className=" flex-wrap ">
-                                <h2>Why Choose Us?</h2>
-                                <p className="" style={{ textAlign: "justify", letterSpacing: "2px" }}>Our commitment to efficiency ensures timely deliveries and smooth operations, while our track record of reliability speaks for itself. With customized solutions tailored to your specific requirements we guarantee a seamless and stress-free logistics experience</p>
-                                <button type="button" style={{ backgroundImage: 'linear-gradient(to right,#C381DB 0%,#4E92F9 100%)', border: "none", outline: "none", color: "white", padding: "4px 20px 4px 20px", borderRadius: "4px", display: "flex", alignItems: "center" }}>click to watch <MdPlayArrow /> </button>
-                            </div>
+                        <div className="col-md-6 d-flex align-items-center " style={{position:"relative",overflow:"hidden"}}>
+                            <motion.div
+                                initial={{ opacity: 0, x: 500 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{
+                                    type:"spring",
+                                    duration: 1.5,
+                                    bounce: 0.3
+                                }}>
+                                <div className=" flex-wrap ">
+                                    <h2>Why Choose Us?</h2>
+                                    <p className="" style={{ textAlign: "justify", letterSpacing: "2px" }}>Our commitment to efficiency ensures timely deliveries and smooth operations, while our track record of reliability speaks for itself. With customized solutions tailored to your specific requirements we guarantee a seamless and stress-free logistics experience</p>
+                                    <button type="button" style={{ backgroundImage: 'linear-gradient(to right,#C381DB 0%,#4E92F9 100%)', border: "none", outline: "none", color: "white", padding: "4px 20px 4px 20px", borderRadius: "4px", display: "flex", alignItems: "center" }}>click to watch <MdPlayArrow /> </button>
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
@@ -108,42 +131,67 @@ const Home = () => {
                 <div className="borderways overflow-hidden">
                     <h2 style={{ backgroundImage: 'linear-gradient(to right, #C381DB, #4E92F9)', color: 'transparent', WebkitBackgroundClip: 'text', padding: "5%", textAlign: "center" }}>WE ARE RECOMMENDED BY 98K+ BUSSINESS</h2>
                     <div className="row px-5 pb-5 g-5">
-
-                        <div className="col-md-4 col-sm-6 ">
-                            <div className="advertiseVideo" style={{ display: "flex", flex: "wrap", backgroundColor: "#97BDFD", alignItems: "center", color: "white", padding: "6%" }}>
-                                <div style={{ textAlign: "start" }}>
-                                    <h2>70</h2>
-                                    <p>ACTIVE STRATEGY PARTNERSHIPS</p>
+                        <div className="col-md-4 col-sm-6 " >
+                            <motion.div
+                                initial={{ opacity: 0, translateX: "-100px" }}
+                                whileInView={{ opacity: 1, translateX: 0 }}
+                                transition={{
+                                    type:"spring",
+                                    duration: 1,
+                                    delay: 0.8,
+                                    bounce: 0.3
+                                }}>
+                                <div className="advertiseVideo" style={{ display: "flex", flex: "wrap", backgroundColor: "#97BDFD", alignItems: "center", color: "white", padding: "6%" }}>
+                                    <div style={{ textAlign: "start" }}>
+                                        <h2>70</h2>
+                                        <p>ACTIVE STRATEGY PARTNERSHIPS</p>
+                                    </div>
+                                    <div >
+                                        <img src={strategy} alt="strategy" width="80%" />
+                                    </div>
                                 </div>
-                                <div >
-                                    <img src={strategy} alt="strategy" width="80%" />
-                                </div>
-                            </div>
+                            </motion.div>
                         </div>
 
                         <div className="col-md-4 col-sm-6 ">
-                            <div className="advertiseVideo" style={{ display: "flex", flex: "wrap", backgroundColor: "#E4AEFC", alignItems: "center", color: "white", padding: "6%" }}>
-                                <div style={{ textAlign: "start", width: "50%" }}>
-                                    <h2>95k+</h2>
-                                    <p>RECOMMENDATION AND REFERALS</p>
+                            <motion.div
+                                initial={{ opacity: 0, y: -100 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 1,
+                                    delay: 0.8,
+                                    bounce: 0.3
+                                }}>
+                                <div className="advertiseVideo" style={{ display: "flex", flex: "wrap", backgroundColor: "#E4AEFC", alignItems: "center", color: "white", padding: "6%" }}>
+                                    <div style={{ textAlign: "start", width: "50%" }}>
+                                        <h2>95k+</h2>
+                                        <p>RECOMMENDATION AND REFERALS</p>
+                                    </div>
+                                    
                                 </div>
-                                <div >
-
-                                </div>
-                            </div>
+                            </motion.div>
                         </div>
 
-                        <div className="col-md-4 col-sm-6 overflow-hidden">
-                            <div className="advertiseVideo" style={{ display: "flex", flex: "wrap", backgroundColor: "#97BDFD", alignItems: "center", color: "white", padding: "6%" }}>
-                                <div style={{ textAlign: "start" }}>
-                                    <h2>1000+</h2>
-                                    <p>5 STARS REVIEWS FROM HAPPY CLIENTS</p>
+                        <div className="col-md-4 col-sm-6">
+                            <motion.div
+                                initial={{ opacity: 0, translateX: "100px" }}
+                                whileInView={{ opacity: 1, translateX: 0 }}
+                                transition={{
+                                    type:"spring",
+                                    duration: 1,
+                                    delay: 0.8,
+                                    bounce: 0.3
+                                }}>
+                                <div className="advertiseVideo" style={{ display: "flex", flex: "wrap", backgroundColor: "#97BDFD", alignItems: "center", color: "white", padding: "6%" }}>
+                                    <div style={{ textAlign: "start" }}>
+                                        <h2>1000+</h2>
+                                        <p>5 STARS REVIEWS FROM HAPPY CLIENTS</p>
+                                    </div>
+                                    <div >
+                                        <img src={stars} alt="stars" width="80%" />
+                                    </div>
                                 </div>
-                                <div >
-                                    <img src={stars} alt="stars" width="80%" />
-                                </div>
-                            </div>
-
+                            </motion.div>
                         </div>
 
 
@@ -152,7 +200,7 @@ const Home = () => {
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 }
 
