@@ -109,7 +109,7 @@ const Home = () => {
                         </div>
                         <div className="col-md-6 d-flex align-items-center " style={{position:"relative",overflow:"hidden"}}>
                             <motion.div
-                                initial={{ opacity: 0, x: 500 }}
+                                initial={{ opacity: 0, x: 250 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{
                                     type:"spring",
