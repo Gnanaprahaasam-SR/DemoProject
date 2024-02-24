@@ -34,7 +34,7 @@ const Home = () => {
 
     return (
         <div>
-            <div className="HomePageHerosection1 px-5">
+            <div className="HomePageHerosection1 px-5 pt-5" >
                 <h1 className="my-5" style={{ color: "#5A6980" }}>
                     Global Connectivity <span style={{ position: "relative" }}>
                         {Array.from("Simplified").map((letter, index) => (
@@ -52,7 +52,7 @@ const Home = () => {
                     initial={{ opacity: 0, translateX: "-50%" }}
                     animate={{ opacity: 2, translateX: "0%" }}
                     transition={{ duration: 1.5, }}
-                    style={{ position: "absolute", top: "3%", left: screenWidth < 500 ? "0%" : "50%", width: screenWidth < 500 ? "100%" : "50%", zIndex: -1, padding: " 0% 5% 0% 5%", overflow: "hidden" }}
+                    style={{ position: "absolute", top: "4%", left: screenWidth < 500 ? "0%" : "50%", width: screenWidth < 500 ? "100%" : "50%", zIndex: -1, padding: " 0% 5% 0% 5%", overflow: "hidden" }}
                 >
                     <motion.video
                         initial={{ opacity: 0 }}

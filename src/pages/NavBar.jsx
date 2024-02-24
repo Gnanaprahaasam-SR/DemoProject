@@ -14,7 +14,7 @@ function NavHeader() {
 
 
     return (
-        <Navbar expand="lg" style={{ backgroundColor: "#FFFFFF", boxShadow:"0px 0px 1px 0px" }}>
+        <Navbar sticky="top" expand="lg" className='shadow-sm' style={{ backgroundColor:"transparent" }}>
             <Container >
                 <Navbar.Brand as={Link} to="/"> <img src={logo} alt='brain & spine' /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
